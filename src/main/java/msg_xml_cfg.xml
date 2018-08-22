@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns:nt="http://www.nantian.com.cn/tvbank/schema/packet"
+		 xsi:schemaLocation="http://www.nantian.com.cn/tvbank/schema/packet 
+							 nt-icbc-tvbank-packet-1.0.xsd">
+							 
+							 
+							 
+		<!-- <nt:xmlx id="sInf0001" name="电视银行用户登录上送报文">
+			<nt:xmlfields varname="g_transcode" comment="交易码"
+				path="root/g_transcode"/>
+			<nt:xmlfields varname="mdcardno" comment="卡号"
+				path="root/mdcardno"/>
+			<nt:xmlfields varname="login_password" comment="密码"
+				path="root/login_password"/>
+			</nt:xmlx>
+		
+		<nt:xmlx id="sOutf0001" name="电视银行用户登录返回报文">
+			<nt:xmlfields varname="retcode" 
+				path="root/retcode" comment="返回代码"/>
+			<nt:xmlfields varname="retmsg" 
+				path="root/retmsg" comment="返回信息"/>
+			<nt:xmlfields varname="regf" 
+				path="root/regf" comment="注册方式(0－柜面注册1－自助注册)"/>
+			<nt:xmlfields varname="last_logon_date" 
+				path="root/last_logon_date" comment="上次登录日期"/>
+			<nt:xmlfields varname="last_logon_time" 
+				path="root/last_logon_time" comment="上次登录时间"/>
+			<nt:xmlfields varname="pcftype" 
+				path="root/pcftype" comment="认证介质类型"/>
+			<nt:xmlfields varname="pcfno" 
+				path="root/pcfno" comment="认证介质序号"/>
+			<nt:xmlfields varname="mbpayno" 
+				path="root/mbpayno" comment="首选注册卡"/>
+			<nt:xmlfields varname="feedate" 
+				path="root/feedate" comment="年费到期日"/>
+			<nt:xmlfields varname="ozoneno" 
+				path="root/ozoneno" comment="注册地区号"/>
+			<nt:xmlfields varname="obrno" 
+				path="root/obrno" comment="注册网点号"/>
+			<nt:xmlfields varname="vipclevel" 
+				path="root/vipclevel" comment="贵宾客户级别"/>
+			<nt:xmlfields varname="field1" 
+				path="root/field1" comment="口令卡设置限额标志"/>
+			<nt:xmlfields varname="field2" 
+				path="root/field2" comment="口令卡限额"/>
+			<nt:xmlfields varname="lossflag" 
+				path="root/lossflag" comment="挂失状态标志"/>
+			<nt:xmlfields varname="icflag" 
+				path="root/icflag" comment="IC卡动态密码器标志"/>
+			<nt:xmlfields varname="optno" 
+				path="root/optno" comment="OPT序号"/>
+		</nt:xmlx> -->
+		
+		
+							 
+		<!-- 测试 -->
+		 
+		<nt:xmlx id="sInf0001" name="电视银行用户登录上送报文">
+			<nt:xmlfields varname="mdCardNo" comment="卡号"
+				path="root/MDCARDNO"/>
+			<nt:xmlfields varname="passWord" comment="密码"
+				path="root/LOGIN_PASSWORD/ttttttt"/>
+		</nt:xmlx>
+		
+		<nt:xmlx id="sOutf0001" name="电视银行用户登录返回报文">
+			<nt:xmlfields varname="agentCode" 
+				path="UTILITY_PAYMENT/CONST_HEAD/REQUEST_TYPE/t1/t2" comment="商户号"/>
+			<nt:xmlfields varname="tranFlag" 
+				path="UTILITY_PAYMENT/CONST_HEAD/COUNT" comment="缴费类型标志"/>
+			<nt:xmlfields varname="userCode" 
+				path="UTILITY_PAYMENT/DATA_AREA/USER_CODE" comment="用户号"/>
+			<nt:xmlfields varname="date"
+				path="UTILITY_PAYMENT/DATA_AREA/DESC/REC/DATE"  comment="日期"  padding="#"/>
+			<nt:xmlfields varname="je"
+				path="UTILITY_PAYMENT/DATA_AREA/DESC/REC/JE"  comment="金额"  padding="#"/>
+			<nt:xmlfields varname="znj"
+				path="UTILITY_PAYMENT/DATA_AREA/DESC/REC/ZNJ"  comment="滞纳金"  padding="#"/>
+		</nt:xmlx>
+		
+</beans>

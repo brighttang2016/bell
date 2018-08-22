@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns:nt="http://www.nantian.com.cn/tvbank/schema/packet"
+		 xsi:schemaLocation="http://www.nantian.com.cn/tvbank/schema/packet nt-icbc-tvbank-packet-1.0.xsd
+		 					">
+	<!-- <nt:packetDelimiter id="cInf0001" name="电视银行用户登录上送报文">
+		<nt:delimiterfields varname="g_transcode" serials="0" 
+			comment="交易码"/>
+		<nt:delimiterfields varname="mdcardno" serials="1" 
+			comment="卡号"/>
+		<nt:delimiterfields varname="login_password" serials="2" 
+			comment="密码"/>
+	</nt:packetDelimiter>
+	<nt:packetDelimiter id="cOutf0001" name="电视银行用户登录返回报文">
+		<nt:delimiterfields varname="retcode" serials="0"
+			comment="返回代码" />
+		<nt:delimiterfields varname="retmsg" serials="1"
+			comment="返回信息" />
+		<nt:delimiterfields varname="regf" serials="2"
+			comment="注册方式(0－柜面注册1－自助注册)" />
+		<nt:delimiterfields varname="last_logon_date" serials="3"
+			comment="上次登录日期" /> 
+		<nt:delimiterfields varname="last_logon_time" serials="4"
+			comment="上次登录时间" /> 
+		<nt:delimiterfields varname="pcftype" serials="5"
+			comment="认证介质类型" /> 
+		<nt:delimiterfields varname="pcfno" serials="6"
+			comment="认证介质序号" /> 
+		<nt:delimiterfields varname="mbpayno" serials="7"
+			comment="首选注册卡" /> 
+		<nt:delimiterfields varname="feedate" serials="8"
+			comment="年费到期日" /> 
+		<nt:delimiterfields varname="ozoneno" serials="9"
+			comment="注册地区号" /> 
+		<nt:delimiterfields varname="obrno" serials="10"
+			comment="注册网点号" /> 
+		<nt:delimiterfields varname="vipclevel" serials="11"
+			comment="贵宾客户级别" /> 
+		<nt:delimiterfields varname="field1" serials="12"
+			comment="口令卡设置限额标志" /> 
+		<nt:delimiterfields varname="field2" serials="13"
+			comment="口令卡限额" /> 
+		<nt:delimiterfields varname="lossflag" serials="14"
+			comment="挂失状态标志" /> 
+		<nt:delimiterfields varname="icflag" serials="15"
+			comment="IC卡动态密码器标志" /> 
+		<nt:delimiterfields varname="optno" serials="16"
+			comment="OPT序号" /> 
+	</nt:packetDelimiter> -->
+	 <!-- 测试 -->
+	 <!--  -->
+	<nt:packetDelimiter id="cInf0001" name="电视银行用户登录上送报文">
+		<nt:delimiterfields varname="mdCardNo" serials="1" 
+			comment="卡号"/>
+		<nt:delimiterfields varname="passWord" serials="2" 
+			comment="密码"/>
+	</nt:packetDelimiter>
+	<nt:packetDelimiter id="cOutf0001" name="电视银行用户登录返回报文">
+		<nt:delimiterfields varname="agentCode" serials="0"
+			comment="商户号" />
+		<nt:delimiterfields varname="tranFlag" serials="1"
+			comment="缴费类型标志" />
+		<nt:delimiterfields varname="userCode" serials="2"
+			comment="用户号" />
+		<nt:delimiterfields varname="dataBuf" serials="3"
+			comment="明细数据" /> 
+	</nt:packetDelimiter>
+	
+</beans>

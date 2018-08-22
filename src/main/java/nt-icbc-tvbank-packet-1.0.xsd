@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.nantian.com.cn/tvbank/schema/packet"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:nt="http://www.nantian.com.cn/tvbank/schema/packet"
+			targetNamespace="http://www.nantian.com.cn/tvbank/schema/packet"
+			elementFormDefault="qualified"
+			attributeFormDefault="unqualified">
+	<xsd:element name="msgdlt">
+		<xsd:annotation><xsd:documentation><![CDATA[竖线分隔报文根]]></xsd:documentation></xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+			<!-- 
+				<xsd:element name="test1" type="xsd:string"></xsd:element>
+				<xsd:element name="test2" type="xsd:string"></xsd:element>
+			 -->
+				<xsd:element ref="packetDelimiter"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- delimiter begin -->
+	<xsd:element name="packetDelimiter">
+		<xsd:annotation><xsd:documentation><![CDATA[分隔符格式报文]]></xsd:documentation></xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="delimiterfields" />
+			</xsd:choice>
+			<xsd:attribute name="id" use="required" type="xsd:ID">
+				<xsd:annotation><xsd:documentation><![CDATA[ID，提供给Spring使用]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="name" use="required" type="xsd:string" >
+				<xsd:annotation><xsd:documentation><![CDATA[分隔符格式报文的名称，必须配置]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>	
+	
+	<xsd:element name="delimiterfields">
+		<xsd:annotation><xsd:documentation><![CDATA[分隔符格式报文的域]]></xsd:documentation></xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="varname" use="required" type="xsd:string">
+				<xsd:annotation><xsd:documentation><![CDATA[变量名]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="serials" use="required" type="xsd:string">
+				<xsd:annotation><xsd:documentation><![CDATA[序列号]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="comment" use="required" type="xsd:string">
+				<xsd:annotation><xsd:documentation><![CDATA[字段说明]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- delimiter end -->
+	<!-- xml begin -->
+	<xsd:element name="xmlx">
+		<xsd:annotation><xsd:documentation><![CDATA[字段说明xml报文]]></xsd:documentation></xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice>
+				<xsd:element ref="xmlfields"/>
+			</xsd:choice>
+			<xsd:attribute name="id" use="required" type="xsd:ID">
+				<xsd:annotation><xsd:documentation><![CDATA[报文id]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="name" use="required" type="xsd:string">
+				<xsd:annotation><xsd:documentation><![CDATA[xml格式报文的名称，必须配置]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="xmlfields">
+		<xsd:annotation><xsd:documentation><![CDATA[xml格式报文域]]></xsd:documentation></xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="varname" use="required" type="xsd:string">
+				<xsd:annotation><xsd:documentation><![CDATA[本域名称]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="comment">
+				<xsd:annotation><xsd:documentation><![CDATA[本域备注]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="path" use="required" type="xsd:string">
+				<xsd:annotation><xsd:documentation><![CDATA[本域xml节点]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="padding"  type="xsd:string">
+				<xsd:annotation><xsd:documentation><![CDATA[明细解包后#号分隔]]></xsd:documentation></xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- xml end -->
+</xsd:schema>
